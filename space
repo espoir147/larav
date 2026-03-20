@@ -1,0 +1,18 @@
+[90m= [39m[34;4mIlluminate\Support\Collection[39;24m {#5438
+    [34mall[39m: [
+      "[32mid[39m",
+      "[32mutilisateur_id[39m",
+      "[32mmaison_id[39m",
+      "[32mappartement_id[39m",
+      "[32mmontant[39m",
+      "[32mmois_paye[39m",
+      "[32mannee_paye[39m",
+      "[32moperateur_id[39m",
+      "[32mreference_transaction[39m",
+      "[32mfedapay_id[39m",
+      "[32mdate_paiement[39m",
+      "[32mcreated_at[39m",
+      "[32mupdated_at[39m",
+    ],
+  }
+

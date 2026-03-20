@@ -1,0 +1,1 @@
+<?php /**PATH /home/espoir/larav/resources/views/client/favoris.blade.php ENDPATH**/ ?>
