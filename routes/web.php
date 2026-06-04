@@ -188,3 +188,14 @@ Route::prefix('client')->name('client.')->middleware(['auth', 'client'])->group(
     Route::get('/favoris', [ClientController::class, 'favoris'])->name('favoris');
 });
 
+
+Route::get('/debug-url', function() {
+    return [
+        'app_url' => config('app.url'),
+        'request_url' => request()->url(),
+        'is_secure' => request()->isSecure(),
+        'scheme' => request()->getScheme(),
+        'login_route' => route('login'),
+    ];
+});
+
