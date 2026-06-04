@@ -188,23 +188,3 @@ Route::prefix('client')->name('client.')->group(function () {
     Route::get('/favoris', [ClientController::class, 'favoris'])->name('favoris');
 });
 
-
-Route::get('/setup-admin/{token}', function($token) {
-    if ($token !== 'takagi147') {
-        abort(403);
-    }
-
-    $admin = \App\Models\Utilisateur::updateOrCreate(
-        ['email' => 'admin@immoloc.com'],
-        [
-            'nom'          => 'Admin',
-            'email'        => 'admin@immoloc.com',
-            'telephone'    => '0146151511',
-            'mot_de_passe' => bcrypt('immoloc'),
-            'type'         => 'admin',
-            'statut'       => 'actif',
-        ]
-    );
-
-    return 'Admin créé : ' . $admin->email;
-});
