@@ -17,4 +17,4 @@ RUN composer install --optimize-autoloader --no-dev --ignore-platform-req=ext-pd
 RUN chmod -R 777 storage bootstrap/cache
 
 # Lancement de l'application sur le port dynamique de Render
-CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
+CMD php artisan config:clear && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
