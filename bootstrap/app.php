@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -11,15 +10,17 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
-    })
-    ->withExceptions(function (Exceptions $exceptions): void {
-        //
-    })
-    ->withMiddleware(function (Middleware $middleware) {
+        // Forcer la détection HTTPS derrière le proxy Render/Cloudflare
+        $middleware->trustProxies(at: '*');
+
+        // Aliases des middlewares personnalisés
         $middleware->alias([
             'admin'        => \App\Http\Middleware\CheckAdmin::class,
             'proprietaire' => \App\Http\Middleware\CheckProprietaire::class,
             'client'       => \App\Http\Middleware\CheckClient::class,
         ]);
-    })->create();
+    })
+    ->withExceptions(function (Exceptions $exceptions): void {
+        //
+    })
+    ->create();
