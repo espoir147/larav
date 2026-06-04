@@ -17,7 +17,7 @@ class Appartement extends Model
         'numero_appartement',
         'adresse',
         'ville',
-        'descriptin',
+        'description',
         'prix_mensuel',
         'nombre_chambres',
         'salon',
