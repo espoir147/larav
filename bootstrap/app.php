@@ -15,4 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
+    })
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'admin'        => \App\Http\Middleware\CheckAdmin::class,
+            'proprietaire' => \App\Http\Middleware\CheckProprietaire::class,
+            'client'       => \App\Http\Middleware\CheckClient::class,
+        ]);
     })->create();
