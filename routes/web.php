@@ -56,7 +56,7 @@ Route::post('/contact-proprietaire', [PropertyController::class, 'contactProprie
 Route::view('/guide', 'guide')->name('guide');
 
 // ==================== ROUTES ADMIN ====================
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
     // Gestion utilisateurs
@@ -105,7 +105,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 // ==================== ROUTES PROPRIÉTAIRE ====================
-Route::prefix('proprietaire')->name('proprietaire.')->group(function () {
+Route::prefix('proprietaire')->name('proprietaire.')->middleware(['auth', 'proprietaire'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     // Biens
@@ -166,7 +166,7 @@ Route::post('/client/paiements/webhook', [ClientController::class, 'webhookFedaP
     ->name('client.paiements.webhook');
 
 // ==================== ROUTES CLIENT ====================
-Route::prefix('client')->name('client.')->group(function () {
+Route::prefix('client')->name('client.')->middleware(['auth', 'client'])->group(function () {
     Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('dashboard');
     Route::get('/profil', [ClientController::class, 'profil'])->name('profil');
     Route::put('/profil', [ClientController::class, 'updateProfil'])->name('profil.update');
