@@ -12,8 +12,7 @@ WORKDIR /app
 COPY . .
 
 # Installation des dépendances Laravel
-RUN composer install --optimize-autoloader --no-dev
-
+RUN composer install --optimize-autoloader --no-dev --ignore-platform-req=ext-pdo_mysql
 # Permissions nécessaires pour Laravel
 RUN chmod -R 777 storage bootstrap/cache
 
