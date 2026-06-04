@@ -87,7 +87,7 @@ class PropertyController extends Controller
                 if (is_string($property->photos)) {
                     // Vérifier si c'est du JSON
                     if (strpos($property->photos, '[') === 0) {
-                        $photosArray = json_decode($property->photos, true);
+                        $photosArray = json_decode($property->photos, true); 
                     } else {
                         // Sinon c'est une chaîne séparée par des virgules
                         $photosArray = explode(',', $property->photos);

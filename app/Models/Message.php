@@ -13,7 +13,7 @@ class Message extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'expediteur_id', 'destinataire_id', 'logement_type', 
+        'expediteur_id', 'destinataire_id', 'logement_type',
         'logement_id', 'contenu', 'lu'
     ];
 

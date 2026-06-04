@@ -59,7 +59,7 @@ class Appartement extends Model
     {
         if (empty($this->photos)) {
             return [];
-        }
+        } 
 
         $photos = explode(',', $this->photos);
         return array_map(function($photo) {

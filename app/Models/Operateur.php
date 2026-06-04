@@ -19,4 +19,4 @@ class Operateur extends Model
     {
         return $this->hasMany(Paiement::class, 'operateur_id');
     }
-}
+} 

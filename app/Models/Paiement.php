@@ -31,7 +31,7 @@ class Paiement extends Model
     public function maison()
     {
         return $this->belongsTo(Maison::class, 'maison_id');
-    }
+    } 
 
     public function appartement()
     {

@@ -18,7 +18,7 @@ class Utilisateur extends Authenticatable
         'email',
         'indicatif_pays',
         'telephone',
-        'date_naissance',
+        'date_naissance', 
         'mot_de_passe',
         'type',
         'photo_profil',

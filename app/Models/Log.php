@@ -19,7 +19,7 @@ class Log extends Model
         'user_agent',
         'old_values',
         'new_values'
-    ];
+    ]; 
 
     protected $casts = [
         'old_values' => 'array',

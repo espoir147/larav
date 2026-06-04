@@ -70,7 +70,7 @@ class Maison extends Model
             }
             return $trimmed;
         }, $photos);
-    }
+    } 
 
     public function getFirstPhotoAttribute()
     {

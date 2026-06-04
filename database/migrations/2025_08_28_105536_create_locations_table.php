@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('date_debut')->useCurrent();
             $table->enum('statut', ['en_attente', 'acceptee', 'refusee'])->default('en_attente');
             $table->timestamps();
-        });
+        }); 
     }
 
     /**

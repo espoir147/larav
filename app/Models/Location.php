@@ -15,7 +15,7 @@ class Location extends Model
     protected $fillable = [
         'utilisateur_id', 'type_logement', 'id_logement', 'statut', 'date_debut'
     ];
-
+ 
     protected $casts = [
         'date_debut' => 'date'
     ];

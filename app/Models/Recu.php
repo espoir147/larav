@@ -17,7 +17,7 @@ class Recu extends Model
     protected $casts = [
         'date_creation' => 'datetime'
     ];
-
+ 
     // Relations
     public function paiement()
     {
