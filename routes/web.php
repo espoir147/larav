@@ -189,13 +189,12 @@ Route::prefix('client')->name('client.')->middleware(['auth', 'client'])->group(
 });
 
 
-Route::get('/debug-url', function() {
+Route::get('/debug-photo', function() {
     return [
-        'app_url' => config('app.url'),
-        'request_url' => request()->url(),
-        'is_secure' => request()->isSecure(),
-        'scheme' => request()->getScheme(),
-        'login_route' => route('login'),
+        'photo_profil' => Auth::user()->photo_profil,
+        'asset_url' => asset('storage/' . Auth::user()->photo_profil),
+        'storage_link_exists' => file_exists(public_path('storage')),
+        'storage_path' => storage_path('app/public'),
     ];
-});
+})->middleware('auth');
 
