@@ -703,7 +703,7 @@
         </div>
         <div class="header-right">
             <span class="user-name">{{ Auth::user()->nom }}</span>
-            <img id="headerAvatar" src="{{ Auth::user()->photo_profil ? asset('storage/' . Auth::user()->photo_profil) . '?v=' . time() : asset('public/images/default-avatar.jpg') }}" alt="Photo profil" class="user-avatar">
+            <img id="headerAvatar" src="{{ Auth::user()->photo_profil ? asset('storage/' . Auth::user()->photo_profil) . '?v=' . time() : asset('images/default-avatar.jpg') }}" alt="Photo profil" class="user-avatar">
         </div>
     </header>
 
